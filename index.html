@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+
+            body
+            {
+                background-color: #1b4965;
+            }
+            div.container
+            {
+                margin: 5rem auto;
+                display: block;
+                width: 200px;
+                color: white;
+                border: 1px solid #ddd;
+                height: 100px;
+                padding: 1rem;
+                font-size: 1.6rem;
+                text-align: center;
+            }
+
+            .container button
+            {
+                cursor: pointer;
+                padding: 0.5rem 1rem;
+                font-size: 1rem;
+                background-color: transparent;
+                border: 1px solid white;
+                color: white;
+                border-radius: 5px;
+
+            }
+
+            .container button:hover{
+                background-color: white;
+                color: #1b4965;
+                border: 1px solid #1b4965;
+            }
+
+            #clocktime
+            {
+                text-shadow: 1px 2px 10px #000;
+            }
+        </style>
+        
+    </head>
+    <title>Clock</title>
+
+    <body>
+
+        <div class="container">
+                    <button onclick="clearInterval(timing)">Stop</button>
+        <button onclick="window.location.reload()">Start</button>
+        <p id="clocktime"></p>
+    </div>
+
+
+        <script>
+
+           
+
+               
+            
+                var timing = setInterval(clocktiming, 1000);
+
+                function clocktiming(){
+                    var d = new Date();
+
+                    var clocktime = d.toLocaleTimeString();
+
+                    document.getElementById('clocktime').innerHTML = clocktime;
+
+                }
+
+        
+        </script>
+    </body>
+
+</html>
